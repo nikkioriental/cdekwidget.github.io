@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>CDEK</title>
+    <title>CDEK Widget</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=0.85"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no"/>
     <script src="https://cdn.jsdelivr.net/npm/@cdek-it/widget@3" type="text/javascript"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #cdek-map {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', () => {
             new window.CDEKWidget({
@@ -19,6 +32,6 @@
     </script>
 </head>
 <body>
-<div id='cdek-map' style="width: 100%;height: 100%;"></div>
+<div id="cdek-map"></div>
 </body>
 </html>
