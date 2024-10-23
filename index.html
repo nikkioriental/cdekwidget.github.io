@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CDEK</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=0.85" />
+    <script src="https://cdn.jsdelivr.net/npm/@cdek-it/widget@3" type="text/javascript"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            new window.CDEKWidget({
+                from: 'Москва',
+                root: 'cdek-map',
+                apiKey: '6f7f3cb6-f657-4a5b-aefb-70426879b469',
+                servicePath: 'https://cdek.liostore.com/service.php',
+                defaultLocation: 'Москва',
+            });
+        });
+    </script>
+</head>
+
+</html>
