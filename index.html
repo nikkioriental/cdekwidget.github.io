@@ -44,8 +44,14 @@
                 onReady() {
                     console.log("CDEK Виджет загружен");
                 },
-                onCalculate() {
+                onCalculate(rate, address) {
                     console.log("Расчет стоимости доставки произведен");
+
+                    const data = {
+                        rate: rate,
+                        address: address
+                    };
+                    window.ReactNativeWebView.postMessage(JSON.stringify(data));
                 },
                 onChoose(mode, rate, address) {
                     console.log("Доставка выбрана");
