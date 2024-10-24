@@ -21,12 +21,38 @@
     </style>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const defaultLocation = urlParams.get('default_location');
+
             new window.CDEKWidget({
                 from: 'Москва',
                 root: 'cdek-map',
                 apiKey: '6f7f3cb6-f657-4a5b-aefb-70426879b469',
                 servicePath: 'https://cdek.liostore.com/service.php',
-                defaultLocation: 'Москва',
+                defaultLocation: defaultLocation || 'Москва',
+                canChoose: true,
+                hideFilters: {
+                    have_cashless: true,
+                    have_cash: true,
+                    is_dressing_room: true,
+                    type: true,
+                },
+                hideDeliveryOptions: {
+                    office: false,
+                    door: true,
+                },
+                onReady() {
+                    console.log("CDEK Виджет загружен");
+                },
+                onCalculate() {
+                    console.log("Расчет стоимости доставки произведен");
+                },
+                onChoose(mode, rate, address) {
+                    console.log("Доставка выбрана");
+                    console.log("Режим доставки: " + JSON.stringify(mode));
+                    console.log("Тариф: " + JSON.stringify(rate));
+                    console.log("Адрес: " + JSON.stringify(address));
+                },
             });
         });
     </script>
