@@ -49,12 +49,17 @@
                 },
                 onChoose(mode, rate, address) {
                     console.log("Доставка выбрана");
-                    console.log("Режим доставки: " + JSON.stringify(mode));
-                    console.log("Тариф: " + JSON.stringify(rate));
-                    console.log("Адрес: " + JSON.stringify(address));
+
+                    const data = {
+                        mode: mode,
+                        rate: rate,
+                        address: address
+                    };
+                    window.ReactNativeWebView.postMessage(JSON.stringify(data));
                 },
             });
         });
+
     </script>
 </head>
 <body>
